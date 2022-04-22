@@ -2,10 +2,15 @@ package com.example.ec.explorecali.repository;
 
 import com.example.ec.explorecali.domain.TourPackage;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 import java.util.Optional;
 
+/**
+ * Modify Endpoint
+ */
+@RepositoryRestResource( collectionResourceRel = "packages", path = "packages" )
 public interface TourPackageRepository extends CrudRepository<TourPackage,String> {
 
     Optional<TourPackage> findByName(String name);
