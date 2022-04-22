@@ -22,9 +22,6 @@ import static com.fasterxml.jackson.annotation.PropertyAccessor.FIELD;
 @SpringBootApplication
 public class ExplorecaliApplication implements CommandLineRunner {
 
-	@Value("${ec.importfile}")
-	private String importFile;
-
 	@Autowired
 	private TourPackageService tourPackageService;
 	@Autowired
@@ -37,7 +34,7 @@ public class ExplorecaliApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		createTourAllPackages();
-		createTours(importFile);
+		createTours("ExploreCalifornia.json");
 	}
 
 	/**
